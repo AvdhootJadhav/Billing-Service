@@ -14,11 +14,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/system")
+@RequestMapping("/")
 public class BillController {
     
     @Autowired
     private BillService service;
+
+    @PostMapping("/home")
+    public String introduction(){
+        return "Hey, there!";
+    }
 
     @GetMapping("/bills")
     public List<BillEntity> getAllBills(){
